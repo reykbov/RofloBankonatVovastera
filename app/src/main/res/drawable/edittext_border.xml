@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Белый фон -->
+    <solid android:color="#FFFFFF" />
+
+    <!-- Черная обводка (1dp) -->
+    <stroke
+        android:width="0.5dp"
+        android:color="#000000" />
+
+    <!-- Отступы для текста -->
+    <padding
+        android:bottom="8dp"
+        android:left="12dp"
+        android:right="12dp"
+        android:top="8dp" />
+</shape>

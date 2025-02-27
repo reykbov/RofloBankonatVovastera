@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">RofloBankomatVovastera</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="choose_action">Выберите действие</string>
+    <string name="log_in">Вход в систему</string>
+    <string name="add_user">Добавить пользователя</string>
+    <string name="encashment">Инкассация</string>
+    <string name="end_of_work">Завершение работы</string>
+    <string name="find_balance">Узнать баланс</string>
+    <string name="deposit_funds">Внести средства</string>
+    <string name="withdraw_funds">Снять средства</string>
+    <string name="log_out">Выход из системы</string>
+    <string name="back_to_menu">Вернуться в меню</string>
+    <string name="enter_deposit_amount">Введите сумму для внесения в банкомат:</string>
+    <string name="hint_enter_amount">Введите сумму</string>
+    <string name="invalid_format">Недопустимый формат</string>
+    <string name="funds_deposited">Средства внесены</string>
+    <string name="enter_withdraw_amount">Введите сумму для снятия с банкомата:</string>
+    <string name="take_funds">Заберите средства</string>
+    <string name="debit_funds">Списать средства</string>
+    <string name="insufficient_funds">Недостаточно средств</string>
+</resources>
