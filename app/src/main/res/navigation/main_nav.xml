@@ -123,6 +123,12 @@
         <action
             android:id="@+id/action_addUserFragment_to_userAddedFragment"
             app:destination="@id/userAddedFragment" />
+        <action
+            android:id="@+id/action_addUserFragment_to_addUserIncorrectPinFragment"
+            app:destination="@id/addUserIncorrectPinFragment" />
+        <action
+            android:id="@+id/action_addUserFragment_to_userAlreadyAddedFragment"
+            app:destination="@id/userAlreadyAddedFragment" />
     </fragment>
     <fragment
         android:id="@+id/addUserIncorrectlyDataFragment"
@@ -140,6 +146,24 @@
         tools:layout="@layout/fragment_user_added" >
         <action
             android:id="@+id/action_userAddedFragment_to_addUserFragment"
+            app:destination="@id/addUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addUserIncorrectPinFragment"
+        android:name="com.example.roflobankomatvovastera.fragments.AddUserIncorrectPinFragment"
+        android:label="fragment_add_user_incorrect_pin"
+        tools:layout="@layout/fragment_add_user_incorrect_pin" >
+        <action
+            android:id="@+id/action_addUserIncorrectPinFragment_to_addUserFragment"
+            app:destination="@id/addUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userAlreadyAddedFragment"
+        android:name="com.example.roflobankomatvovastera.fragments.UserAlreadyAddedFragment"
+        android:label="fragment_user_already_added"
+        tools:layout="@layout/fragment_user_already_added" >
+        <action
+            android:id="@+id/action_userAlreadyAddedFragment_to_addUserFragment"
             app:destination="@id/addUserFragment" />
     </fragment>
 </navigation>

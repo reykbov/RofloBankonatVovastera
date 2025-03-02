@@ -49,7 +49,7 @@ dependencies {
     implementation(libs.material.v1110)
     implementation(libs.androidx.constraintlayout.v214)
     implementation(libs.androidx.activity.ktx)
-    implementation(libs.gson)
+    implementation(libs.gson.v289)
 
     // Тестирование
     testImplementation(libs.junit)

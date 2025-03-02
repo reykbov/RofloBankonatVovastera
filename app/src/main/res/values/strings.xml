@@ -27,4 +27,6 @@
     <string name="hint_enter_pin">Введите пин-код</string>
     <string name="data_entered_incorrectly">Данные введены некорректно</string>
     <string name="user_added">Пользователь добавлен</string>
+    <string name="incorrect_pin_format">Некорректный формат pin-кода</string>
+    <string name="user_already_added">Пользователь уже существует</string>
 </resources>
