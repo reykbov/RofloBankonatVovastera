@@ -35,9 +35,9 @@ class EncashmentMenuFragment : Fragment() {
         }
         with(binding) {
             tvLogOut.setOnClickListener { findNavController().navigate(R.id.mainMenuFragment) }
-            tvFindBalance.setOnClickListener { findNavController().navigate(R.id.balanceFragment) }
-            tvDepositFunds.setOnClickListener { findNavController().navigate(R.id.depositFragment) }
-            tvWithdrawFunds.setOnClickListener { findNavController().navigate(R.id.withdrawFragment) }
+            tvFindBalance.setOnClickListener { findNavController().navigate(R.id.atmBalanceFragment2) }
+            tvDepositFunds.setOnClickListener { findNavController().navigate(R.id.encashmentDepositFragment2) }
+            tvWithdrawFunds.setOnClickListener { findNavController().navigate(R.id.encashmentWithdrawFragment) }
         }
     }
 }

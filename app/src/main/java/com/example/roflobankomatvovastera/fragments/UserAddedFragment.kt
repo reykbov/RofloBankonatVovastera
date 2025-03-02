@@ -7,13 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.roflobankomatvovastera.R
-import com.example.roflobankomatvovastera.databinding.FragmentMainMenuBinding
+import com.example.roflobankomatvovastera.databinding.FragmentUserAddedBinding
 
-class MainMenuFragment : Fragment() {
-    private val binding: FragmentMainMenuBinding by lazy {
-        FragmentMainMenuBinding.inflate(layoutInflater)
-    }
-
+class UserAddedFragment : Fragment() {
+    private val binding: FragmentUserAddedBinding by lazy { FragmentUserAddedBinding.inflate(layoutInflater) }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,10 +23,9 @@ class MainMenuFragment : Fragment() {
         applyClick()
     }
 
-    private fun applyClick() {
+    fun applyClick() {
         with(binding) {
-            tvEncashment.setOnClickListener { findNavController().navigate(R.id.encashmentMenuFragment) }
-            tvAddUser.setOnClickListener { findNavController().navigate(R.id.addUserFragment) }
+            tvBackToMenu.setOnClickListener { findNavController().navigate(R.id.mainMenuFragment) }
         }
     }
 }

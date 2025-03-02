@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.roflobankomatvovastera.R
-import com.example.roflobankomatvovastera.databinding.FragmentTakeFundsBinding
+import com.example.roflobankomatvovastera.databinding.FragmentEncashmentFundsDepositedBinding
 
-class TakeFundsFragment : Fragment() {
-    private val binding: FragmentTakeFundsBinding by lazy { FragmentTakeFundsBinding.inflate(layoutInflater) }
+class EncashmentFundsDepositedFragment : Fragment() {
+    private val binding: FragmentEncashmentFundsDepositedBinding by lazy {FragmentEncashmentFundsDepositedBinding.inflate(layoutInflater)}
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

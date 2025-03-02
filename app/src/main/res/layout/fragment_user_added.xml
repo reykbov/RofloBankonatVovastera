@@ -6,10 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/yellow"
-    tools:context=".fragments.InsufficientFundsFragment">
+    tools:context=".fragments.UserAddedFragment">
 
     <TextView
-        android:id="@+id/tv_insufficient_funds"
+        android:id="@+id/tv_user_added"
         android:layout_width="320dp"
         android:layout_height="130dp"
         android:layout_marginTop="248dp"
@@ -18,7 +18,7 @@
         android:textColor="@color/black"
         android:textSize="17sp"
         android:textStyle="bold"
-        android:text="@string/insufficient_funds"
+        android:text="@string/user_added"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"

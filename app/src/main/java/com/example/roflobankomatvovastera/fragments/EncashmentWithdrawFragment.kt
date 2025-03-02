@@ -8,12 +8,12 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.roflobankomatvovastera.BalanceHelper
 import com.example.roflobankomatvovastera.R
-import com.example.roflobankomatvovastera.databinding.FragmentDepositBinding
+import com.example.roflobankomatvovastera.databinding.FragmentEncashmentWithdrawBinding
 
-class DepositFragment : Fragment() {
+class EncashmentWithdrawFragment : Fragment() {
     private lateinit var balanceHelper: BalanceHelper
-    private val binding: FragmentDepositBinding by lazy {
-        FragmentDepositBinding.inflate(
+    private val binding: FragmentEncashmentWithdrawBinding by lazy {
+        FragmentEncashmentWithdrawBinding.inflate(
             layoutInflater
         )
     }
@@ -24,7 +24,6 @@ class DepositFragment : Fragment() {
     ): View {
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         balanceHelper = BalanceHelper(requireContext())
@@ -35,13 +34,13 @@ class DepositFragment : Fragment() {
         with(binding) {
             tvBackToMenu.setOnClickListener { findNavController().navigate(R.id.encashmentMenuFragment) }
             tvDepositFunds.setOnClickListener {
-                if (etEnterAmount.text.toString() == "") findNavController().navigate(R.id.invalidFormatFragment) //если поле для ввода пустое, то формат неверный
+                if (etEnterAmount.text.toString() == "") findNavController().navigate(R.id.encashmentInvalidFormatFragment) //если поле для ввода пустое, то формат неверный
                 else {
-                    if (etEnterAmount.text.toString().toInt() + balanceHelper.getBalance() in 0..2147483647) {
-                        balanceHelper.updateBalance(etEnterAmount.text.toString().toInt(), true)
-                        findNavController().navigate(R.id.fundsDepositedFragment)
-                    }
-                    else findNavController().navigate(R.id.invalidFormatFragment)
+                    if (etEnterAmount.text.toString().toInt() <= balanceHelper.getBalance()) {
+                        balanceHelper.updateBalance(etEnterAmount.text.toString().toInt(), false)
+                        findNavController().navigate(R.id.encashmentTakeFundsFragment)
+                    } else if (etEnterAmount.text.toString().toInt() > balanceHelper.getBalance()) findNavController().navigate(R.id.encashmentInsufficientFundsFragment)
+                    else findNavController().navigate(R.id.encashmentInvalidFormatFragment)
                 }
             }
         }

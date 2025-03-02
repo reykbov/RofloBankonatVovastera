@@ -6,10 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/yellow"
-    tools:context=".fragments.WithdrawFragment">
+    tools:context=".fragments.EncashmentDepositFragment">
 
     <TextView
-        android:id="@+id/tv_balance"
+        android:id="@+id/tv_enter_deposit_amount"
         android:layout_width="320dp"
         android:layout_height="100dp"
         android:layout_marginTop="100dp"
@@ -18,7 +18,7 @@
         android:textColor="@color/black"
         android:textSize="17sp"
         android:textStyle="bold"
-        android:text="@string/enter_withdraw_amount"
+        android:text="@string/enter_deposit_amount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,14 +29,14 @@
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:inputType="numberSigned"
-        android:background="@drawable/edittext_border"
         android:hint="@string/hint_enter_amount"
         android:maxLength="9"
         android:textColor="@color/black"
+        android:background="@drawable/edittext_border"
         app:layout_constraintBottom_toTopOf="@+id/tv_deposit_funds"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_balance" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_enter_deposit_amount" />
 
     <TextView
         android:id="@+id/tv_deposit_funds"
@@ -47,7 +47,7 @@
         android:layout_weight="1"
         android:background="@drawable/slim_border_for_tv"
         android:gravity="center"
-        android:text="@string/debit_funds"
+        android:text="@string/deposit_funds"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

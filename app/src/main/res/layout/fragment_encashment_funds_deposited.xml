@@ -6,10 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/yellow"
-    tools:context=".fragments.BalanceFragment">
+    tools:context=".fragments.EncashmentFundsDepositedFragment">
 
     <TextView
-        android:id="@+id/tv_balance"
+        android:id="@+id/tv_funds_deposited"
         android:layout_width="320dp"
         android:layout_height="130dp"
         android:layout_marginTop="248dp"
@@ -18,11 +18,11 @@
         android:textColor="@color/black"
         android:textSize="17sp"
         android:textStyle="bold"
+        android:text="@string/funds_deposited"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Сумма средств в банкомате:\n\n2873223413" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/tv_back_to_menu"

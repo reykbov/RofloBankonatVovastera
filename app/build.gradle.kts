@@ -44,11 +44,12 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
 
     // Основные зависимости AndroidX
-    implementation(libs.androidx.core.ktx.v1120) // Совместимо с API 26
-    implementation(libs.androidx.appcompat.v161) // Совместимо с API 26
-    implementation(libs.material.v1110) // Совместимо с API 26
-    implementation(libs.androidx.constraintlayout.v214) // Совместимо с API 26
-    implementation(libs.androidx.activity.ktx) // Совместимо с API 26
+    implementation(libs.androidx.core.ktx.v1120)
+    implementation(libs.androidx.appcompat.v161)
+    implementation(libs.material.v1110)
+    implementation(libs.androidx.constraintlayout.v214)
+    implementation(libs.androidx.activity.ktx)
+    implementation(libs.gson)
 
     // Тестирование
     testImplementation(libs.junit)

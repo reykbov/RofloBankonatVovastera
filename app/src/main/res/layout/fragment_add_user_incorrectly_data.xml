@@ -6,10 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/yellow"
-    tools:context=".fragments.TakeFundsFragment">
+    tools:context=".fragments.AddUserIncorrectlyDataFragment">
 
     <TextView
-        android:id="@+id/tv_take_funds"
+        android:id="@+id/tv_data_entered_incorrectly"
         android:layout_width="320dp"
         android:layout_height="130dp"
         android:layout_marginTop="248dp"
@@ -18,7 +18,7 @@
         android:textColor="@color/black"
         android:textSize="17sp"
         android:textStyle="bold"
-        android:text="@string/take_funds"
+        android:text="@string/data_entered_incorrectly"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"

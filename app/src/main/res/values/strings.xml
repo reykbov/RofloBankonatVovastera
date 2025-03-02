@@ -19,4 +19,12 @@
     <string name="take_funds">Заберите средства</string>
     <string name="debit_funds">Списать средства</string>
     <string name="insufficient_funds">Недостаточно средств</string>
+    <string name="enter_second_name">Введите фамилию пользователя:</string>
+    <string name="hint_enter_second_name">Введите фамилию</string>
+    <string name="enter_name">Введите имя пользователя:</string>
+    <string name="hint_enter_name">Введите имя</string>
+    <string name="enter_pin">Введите пин-код:</string>
+    <string name="hint_enter_pin">Введите пин-код</string>
+    <string name="data_entered_incorrectly">Данные введены некорректно</string>
+    <string name="user_added">Пользователь добавлен</string>
 </resources>
