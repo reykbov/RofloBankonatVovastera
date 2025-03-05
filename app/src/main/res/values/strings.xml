@@ -29,4 +29,15 @@
     <string name="user_added">Пользователь добавлен</string>
     <string name="incorrect_pin_format">Некорректный формат pin-кода</string>
     <string name="user_already_added">Пользователь уже существует</string>
+    <string name="input">Ввод</string>
+    <string name="go_to_actions">Перейти к действиям</string>
+    <string name="user_not_found">Пользователь не найден</string>
+    <string name="deposit_money">Внести деньги</string>
+    <string name="withdraw_money">Снять деньги</string>
+    <string name="get_history">Получить историю операций</string>
+    <string name="enter_deposit_amount_user">Введите сумму для внесения на счёт:</string>
+    <string name="enter_withdraw_amount_user">Введите сумму для списания со счёта:</string>
+    <string name="debit_money">Списать деньги</string>
+    <string name="take_money">Заберите деньги</string>
+    <string name="sum_not_available">Сумма не доступна для снятия</string>
 </resources>

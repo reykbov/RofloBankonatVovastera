@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_mainMenuFragment_to_addUserFragment"
             app:destination="@id/addUserFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_logInSystemFragment"
+            app:destination="@id/logInSystemFragment" />
     </fragment>
     <fragment
         android:id="@+id/encashmentMenuFragment"
@@ -165,5 +168,170 @@
         <action
             android:id="@+id/action_userAlreadyAddedFragment_to_addUserFragment"
             app:destination="@id/addUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/logInSystemFragment"
+        android:name="com.example.roflobankomatvovastera.fragments.LogInSystemFragment"
+        android:label="fragment_log_in_system"
+        tools:layout="@layout/fragment_log_in_system" >
+        <action
+            android:id="@+id/action_logInSystemFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
+        <action
+            android:id="@+id/action_logInSystemFragment_to_logInIncorrecltlyDataFragment"
+            app:destination="@id/logInIncorrecltlyDataFragment" />
+        <action
+            android:id="@+id/action_logInSystemFragment_to_userNotFoundFragment"
+            app:destination="@id/userNotFoundFragment" />
+        <action
+            android:id="@+id/action_logInSystemFragment_to_logInIncorrectPinFragment"
+            app:destination="@id/logInIncorrectPinFragment" />
+        <action
+            android:id="@+id/action_logInSystemFragment_to_greetingFragment"
+            app:destination="@id/greetingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/logInIncorrecltlyDataFragment"
+        android:name="com.example.roflobankomatvovastera.fragments.LogInIncorrecltlyDataFragment"
+        android:label="fragment_log_in_incorrecltly_data"
+        tools:layout="@layout/fragment_log_in_incorrecltly_data" >
+        <action
+            android:id="@+id/action_logInIncorrecltlyDataFragment_to_logInSystemFragment"
+            app:destination="@id/logInSystemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userNotFoundFragment"
+        android:name="com.example.roflobankomatvovastera.fragments.UserNotFoundFragment"
+        android:label="fragment_user_not_found"
+        tools:layout="@layout/fragment_user_not_found" >
+        <action
+            android:id="@+id/action_userNotFoundFragment_to_logInSystemFragment"
+            app:destination="@id/logInSystemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/logInIncorrectPinFragment"
+        android:name="com.example.roflobankomatvovastera.fragments.LogInIncorrectPinFragment"
+        android:label="fragment_log_in_incorrect_pin"
+        tools:layout="@layout/fragment_log_in_incorrect_pin" >
+        <action
+            android:id="@+id/action_logInIncorrectPinFragment_to_logInSystemFragment"
+            app:destination="@id/logInSystemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/greetingFragment"
+        android:name="com.example.roflobankomatvovastera.fragments.GreetingFragment"
+        android:label="fragment_greeting"
+        tools:layout="@layout/fragment_greeting" >
+        <action
+            android:id="@+id/action_greetingFragment_to_userActionsFragment"
+            app:destination="@id/userActionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userActionsFragment"
+        android:name="com.example.roflobankomatvovastera.fragments.UserActionsFragment"
+        android:label="fragment_user_actions"
+        tools:layout="@layout/fragment_user_actions" >
+        <action
+            android:id="@+id/action_userActionsFragment_to_userBalanceFragment"
+            app:destination="@id/userBalanceFragment" />
+        <action
+            android:id="@+id/action_userActionsFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
+        <action
+            android:id="@+id/action_userActionsFragment_to_userDepositFragment"
+            app:destination="@id/userDepositFragment" />
+        <action
+            android:id="@+id/action_userActionsFragment_to_userWithdrawFragment"
+            app:destination="@id/userWithdrawFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userBalanceFragment"
+        android:name="com.example.roflobankomatvovastera.fragments.UserBalanceFragment"
+        android:label="fragment_user_balance"
+        tools:layout="@layout/fragment_user_balance" >
+        <action
+            android:id="@+id/action_userBalanceFragment_to_userActionsFragment"
+            app:destination="@id/userActionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDepositFragment"
+        android:name="com.example.roflobankomatvovastera.fragments.UserDepositFragment"
+        android:label="fragment_user_deposit"
+        tools:layout="@layout/fragment_user_deposit" >
+        <action
+            android:id="@+id/action_userDepositFragment_to_userInvalidFormatFragment"
+            app:destination="@id/userInvalidFormatFragment" />
+        <action
+            android:id="@+id/action_userDepositFragment_to_userActionsFragment"
+            app:destination="@id/userActionsFragment" />
+        <action
+            android:id="@+id/action_userDepositFragment_to_userFundsDepositedFragment"
+            app:destination="@id/userFundsDepositedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userInvalidFormatFragment"
+        android:name="com.example.roflobankomatvovastera.fragments.UserInvalidFormatFragment"
+        android:label="fragment_user_invalid_format"
+        tools:layout="@layout/fragment_user_invalid_format" >
+        <action
+            android:id="@+id/action_userInvalidFormatFragment_to_userActionsFragment"
+            app:destination="@id/userActionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userFundsDepositedFragment"
+        android:name="com.example.roflobankomatvovastera.fragments.UserFundsDepositedFragment"
+        android:label="fragment_user_funds_deposited"
+        tools:layout="@layout/fragment_user_funds_deposited" >
+        <action
+            android:id="@+id/action_userFundsDepositedFragment_to_userDepositFragment"
+            app:destination="@id/userDepositFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userWithdrawFragment"
+        android:name="com.example.roflobankomatvovastera.fragments.UserWithdrawFragment"
+        android:label="fragment_user_withdraw"
+        tools:layout="@layout/fragment_user_withdraw" >
+        <action
+            android:id="@+id/action_userWithdrawFragment_to_userTakeMoneyFragment2"
+            app:destination="@id/userTakeMoneyFragment2" />
+        <action
+            android:id="@+id/action_userWithdrawFragment_to_userInvalidFormatFragment"
+            app:destination="@id/userInvalidFormatFragment" />
+        <action
+            android:id="@+id/action_userWithdrawFragment_to_userInsufficientFundsFragmentFragment"
+            app:destination="@id/userInsufficientFundsFragmentFragment" />
+        <action
+            android:id="@+id/action_userWithdrawFragment_to_userActionsFragment"
+            app:destination="@id/userActionsFragment" />
+        <action
+            android:id="@+id/action_userWithdrawFragment_to_sumNotAvailableFragment"
+            app:destination="@id/sumNotAvailableFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userTakeMoneyFragment2"
+        android:name="com.example.roflobankomatvovastera.fragments.UserTakeMoneyFragment"
+        android:label="fragment_user_take_money"
+        tools:layout="@layout/fragment_user_take_money" >
+        <action
+            android:id="@+id/action_userTakeMoneyFragment2_to_userActionsFragment"
+            app:destination="@id/userActionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userInsufficientFundsFragmentFragment"
+        android:name="com.example.roflobankomatvovastera.fragments.UserInsufficientFundsFragmentFragment"
+        android:label="fragment_user_insufficient_funds_fragment"
+        tools:layout="@layout/fragment_user_insufficient_funds_fragment" >
+        <action
+            android:id="@+id/action_userInsufficientFundsFragmentFragment_to_userActionsFragment"
+            app:destination="@id/userActionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sumNotAvailableFragment"
+        android:name="com.example.roflobankomatvovastera.fragments.SumNotAvailableFragment"
+        android:label="fragment_sum_not_available"
+        tools:layout="@layout/fragment_sum_not_available" >
+        <action
+            android:id="@+id/action_sumNotAvailableFragment_to_userActionsFragment"
+            app:destination="@id/userActionsFragment" />
     </fragment>
 </navigation>

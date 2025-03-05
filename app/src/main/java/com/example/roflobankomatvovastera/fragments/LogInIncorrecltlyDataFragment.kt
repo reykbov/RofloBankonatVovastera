@@ -7,12 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.roflobankomatvovastera.R
-import com.example.roflobankomatvovastera.databinding.FragmentMainMenuBinding
+import com.example.roflobankomatvovastera.databinding.FragmentLogInIncorrecltlyDataBinding
 
-class MainMenuFragment : Fragment() {
-    private val binding: FragmentMainMenuBinding by lazy {
-        FragmentMainMenuBinding.inflate(layoutInflater)
-    }
+class LogInIncorrecltlyDataFragment : Fragment() {
+    private val binding: FragmentLogInIncorrecltlyDataBinding by lazy { FragmentLogInIncorrecltlyDataBinding.inflate(layoutInflater) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,9 +26,7 @@ class MainMenuFragment : Fragment() {
 
     private fun applyClick() {
         with(binding) {
-            tvEncashment.setOnClickListener { findNavController().navigate(R.id.encashmentMenuFragment) }
-            tvAddUser.setOnClickListener { findNavController().navigate(R.id.addUserFragment) }
-            tvLogIn.setOnClickListener { findNavController().navigate(R.id.logInSystemFragment) }
+            tvBackToMenu.setOnClickListener { findNavController().navigate(R.id.mainMenuFragment) }
         }
     }
 }
