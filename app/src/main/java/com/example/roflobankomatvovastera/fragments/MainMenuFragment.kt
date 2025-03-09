@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityCompat.finishAffinity
 import androidx.navigation.fragment.findNavController
+import com.example.roflobankomatvovastera.MainActivity
 import com.example.roflobankomatvovastera.R
 import com.example.roflobankomatvovastera.databinding.FragmentMainMenuBinding
 
@@ -31,6 +33,7 @@ class MainMenuFragment : Fragment() {
             tvEncashment.setOnClickListener { findNavController().navigate(R.id.encashmentMenuFragment) }
             tvAddUser.setOnClickListener { findNavController().navigate(R.id.addUserFragment) }
             tvLogIn.setOnClickListener { findNavController().navigate(R.id.logInSystemFragment) }
+            tvEndOfWork.setOnClickListener {  requireActivity().finishAffinity() }
         }
     }
 }

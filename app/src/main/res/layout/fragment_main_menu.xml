@@ -42,7 +42,7 @@
             android:textColor="@color/black"
             android:layout_gravity="center"
             android:gravity="center"
-            android:background="@drawable/slim_border_for_tv"
+            android:background="@drawable/background_with_states"
             android:text="@string/log_in" />
 
         <TextView
@@ -54,7 +54,7 @@
             android:textColor="@color/black"
             android:layout_gravity="center"
             android:gravity="center"
-            android:background="@drawable/slim_border_for_tv"
+            android:background="@drawable/background_with_states"
             android:text="@string/add_user" />
 
 
@@ -67,7 +67,7 @@
             android:layout_marginBottom="10dp"
             android:textColor="@color/black"
             android:gravity="center"
-            android:background="@drawable/slim_border_for_tv"
+            android:background="@drawable/background_with_states"
             android:text="@string/encashment" />
 
         <TextView
@@ -78,7 +78,7 @@
             android:layout_gravity="center"
             android:textColor="@color/black"
             android:gravity="center"
-            android:background="@drawable/slim_border_for_tv"
+            android:background="@drawable/background_with_states"
             android:text="@string/end_of_work" />
     </LinearLayout>
 

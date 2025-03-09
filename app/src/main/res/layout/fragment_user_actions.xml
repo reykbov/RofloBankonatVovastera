@@ -42,7 +42,7 @@
             android:textColor="@color/black"
             android:layout_gravity="center"
             android:gravity="center"
-            android:background="@drawable/slim_border_for_tv"
+            android:background="@drawable/background_with_states"
             android:text="@string/find_balance" />
 
         <TextView
@@ -54,7 +54,7 @@
             android:textColor="@color/black"
             android:layout_gravity="center"
             android:gravity="center"
-            android:background="@drawable/slim_border_for_tv"
+            android:background="@drawable/background_with_states"
             android:text="@string/deposit_money" />
 
 
@@ -67,7 +67,7 @@
             android:layout_marginBottom="10dp"
             android:textColor="@color/black"
             android:gravity="center"
-            android:background="@drawable/slim_border_for_tv"
+            android:background="@drawable/background_with_states"
             android:text="@string/withdraw_money" />
 
         <TextView
@@ -79,7 +79,7 @@
             android:textColor="@color/black"
             android:gravity="center"
             android:layout_marginBottom="10dp"
-            android:background="@drawable/slim_border_for_tv"
+            android:background="@drawable/background_with_states"
             android:text="@string/get_history" />
 
         <TextView
@@ -90,7 +90,7 @@
             android:layout_gravity="center"
             android:textColor="@color/black"
             android:gravity="center"
-            android:background="@drawable/slim_border_for_tv"
+            android:background="@drawable/background_with_states"
             android:text="@string/log_out" />
     </LinearLayout>
 
