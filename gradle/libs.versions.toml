@@ -18,6 +18,7 @@ activity = "1.10.0"
 constraintlayout = "2.2.0"
 materialVersion = "1.11.0"
 navigationFragmentKtx = "2.8.5"
+recyclerview = "1.4.0"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity" }
@@ -29,6 +30,7 @@ androidx-espresso-core-v351 = { module = "androidx.test.espresso:espresso-core",
 androidx-junit-v115 = { module = "androidx.test.ext:junit", version.ref = "androidxJunit" }
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationFragmentKtx" }
+androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 gson-v289 = { module = "com.google.code.gson:gson", version.ref = "gsonVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }

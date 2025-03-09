@@ -5,18 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.roflobankomatvovastera.R
 import com.example.roflobankomatvovastera.SharedViewModel
 import com.example.roflobankomatvovastera.UserHelper
-import com.example.roflobankomatvovastera.databinding.FragmentUserActionsBinding
+import com.example.roflobankomatvovastera.databinding.FragmentUserHistoryBinding
 
-class UserActionsFragment : Fragment() {
-    private val binding: FragmentUserActionsBinding by lazy { FragmentUserActionsBinding.inflate(layoutInflater) }
-    private lateinit var viewModel: SharedViewModel
+class UserHistoryFragment : Fragment() {
+    private val binding: FragmentUserHistoryBinding by lazy { FragmentUserHistoryBinding.inflate(layoutInflater) }
     private lateinit var userHelper: UserHelper
+    private lateinit var viewModel: SharedViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,19 +27,23 @@ class UserActionsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         userHelper = UserHelper(requireContext())
+        showHistory()
         applyClick()
     }
 
-    private fun applyClick() {
+    private fun showHistory() {
         viewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
         viewModel.sharedData.observe(viewLifecycleOwner) { data ->
             val userKeyList = data.split("_")
-            userHelper.getUser(userKeyList[0], userKeyList[1], userKeyList[2].toInt())
+            val user = userHelper.getUser(userKeyList[0], userKeyList[1], userKeyList[2].toInt())
+            val history = user.history
+            // Настроить LayoutManager
+            binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            binding.recyclerView.adapter = MyAdapter(history)
         }
-        binding.tvFindBalance.setOnClickListener { findNavController().navigate(R.id.userBalanceFragment) }
-        binding.tvLogOut.setOnClickListener { findNavController().navigate(R.id.mainMenuFragment) }
-        binding.tvDepositMoney.setOnClickListener {  findNavController().navigate(R.id.userDepositFragment)}
-        binding.tvWithdrawMoney.setOnClickListener {  findNavController().navigate(R.id.userWithdrawFragment)}
-        binding.tvGetHistory.setOnClickListener {  findNavController().navigate(R.id.userHistoryFragment)}
+    }
+
+    private fun applyClick() {
+        binding.tvBackToMenu.setOnClickListener { findNavController().navigate(R.id.userActionsFragment) }
     }
 }

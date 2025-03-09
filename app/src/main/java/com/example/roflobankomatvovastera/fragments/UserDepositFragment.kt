@@ -11,6 +11,8 @@ import com.example.roflobankomatvovastera.R
 import com.example.roflobankomatvovastera.SharedViewModel
 import com.example.roflobankomatvovastera.UserHelper
 import com.example.roflobankomatvovastera.databinding.FragmentUserDepositBinding
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class UserDepositFragment : Fragment() {
     private val binding: FragmentUserDepositBinding by lazy { FragmentUserDepositBinding.inflate(layoutInflater) }
@@ -35,11 +37,18 @@ class UserDepositFragment : Fragment() {
             viewModel.sharedData.observe(viewLifecycleOwner) { data ->
                 val userKeyList = data.split("_")
                 val user = userHelper.getUser(userKeyList[0], userKeyList[1], userKeyList[2].toInt())
+                if(user.history.isEmpty()) {
+                    user.history.add("История операций")
+                    userHelper.saveUser(user)
+                }
                 // обработка того, что мы ввели в поле
                 if(binding.etEnterAmount.text.toString() == "") findNavController().navigate(R.id.userInvalidFormatFragment)
                 else {
                     if(binding.etEnterAmount.text.toString().toInt() + userHelper.getUserBalance(user) in 0..2147483647) {
                         userHelper.updateBalance(binding.etEnterAmount.text.toString().toInt(), true, user)
+                        val date = getCurrentDateTime()
+                        user.history.add("- пополнение " + binding.etEnterAmount.text.toString() + " " + date)
+                        userHelper.saveUser(user)
                         findNavController().navigate(R.id.userFundsDepositedFragment)
                     }
                     else findNavController().navigate(R.id.userInvalidFormatFragment)
@@ -49,4 +58,9 @@ class UserDepositFragment : Fragment() {
         binding.tvBackToMenu.setOnClickListener { findNavController().navigate(R.id.userActionsFragment) }
     }
 
+    private fun getCurrentDateTime(): String {
+        val currentDateTime = LocalDateTime.now()
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
+        return currentDateTime.format(formatter)
+    }
 }

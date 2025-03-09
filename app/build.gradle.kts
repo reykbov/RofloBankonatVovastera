@@ -50,6 +50,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout.v214)
     implementation(libs.androidx.activity.ktx)
     implementation(libs.gson.v289)
+    implementation(libs.androidx.recyclerview)
 
     // Тестирование
     testImplementation(libs.junit)

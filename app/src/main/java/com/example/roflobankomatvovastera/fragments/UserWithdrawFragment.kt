@@ -12,6 +12,8 @@ import com.example.roflobankomatvovastera.R
 import com.example.roflobankomatvovastera.SharedViewModel
 import com.example.roflobankomatvovastera.UserHelper
 import com.example.roflobankomatvovastera.databinding.FragmentUserWithdrawBinding
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class UserWithdrawFragment : Fragment() {
     private val binding: FragmentUserWithdrawBinding by lazy {
@@ -41,20 +43,32 @@ class UserWithdrawFragment : Fragment() {
             viewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
             viewModel.sharedData.observe(viewLifecycleOwner) { data ->
                 val userKeyList = data.split("_")
-                val user =
-                    userHelper.getUser(userKeyList[0], userKeyList[1], userKeyList[2].toInt())
+                val user = userHelper.getUser(userKeyList[0], userKeyList[1], userKeyList[2].toInt())
+                if(user.history.isEmpty()) {
+                    user.history.add("История операций")
+                    userHelper.saveUser(user)
+                }
                 // обработка того, что мы ввели в поле
                 if (binding.etEnterAmount.text.toString() == "") findNavController().navigate(R.id.userInvalidFormatFragment)
                 else if (binding.etEnterAmount.text.toString().toInt() > balanceHelper.getBalance()) findNavController().navigate(R.id.sumNotAvailableFragment)
                 else {
                     if (binding.etEnterAmount.text.toString().toInt() <= userHelper.getUserBalance(user)) {
                         userHelper.updateBalance(binding.etEnterAmount.text.toString().toInt(), false, user)
+                        val date = getCurrentDateTime()
+                        user.history.add("- снятие " + binding.etEnterAmount.text.toString() + " " + date)
+                        userHelper.saveUser(user)
                         findNavController().navigate(R.id.userTakeMoneyFragment2)
                     }
                 else findNavController().navigate(R.id.userInsufficientFundsFragmentFragment)
                 }
             }
-            binding.tvBackToMenu.setOnClickListener { findNavController().navigate(R.id.userActionsFragment) }
         }
+        binding.tvBackToMenu.setOnClickListener { findNavController().navigate(R.id.userActionsFragment) }
+    }
+
+    private fun getCurrentDateTime(): String {
+        val currentDateTime = LocalDateTime.now()
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
+        return currentDateTime.format(formatter)
     }
 }

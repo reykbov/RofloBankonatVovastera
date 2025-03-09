@@ -243,6 +243,9 @@
         <action
             android:id="@+id/action_userActionsFragment_to_userWithdrawFragment"
             app:destination="@id/userWithdrawFragment" />
+        <action
+            android:id="@+id/action_userActionsFragment_to_userHistoryFragment"
+            app:destination="@id/userHistoryFragment" />
     </fragment>
     <fragment
         android:id="@+id/userBalanceFragment"
@@ -332,6 +335,15 @@
         tools:layout="@layout/fragment_sum_not_available" >
         <action
             android:id="@+id/action_sumNotAvailableFragment_to_userActionsFragment"
+            app:destination="@id/userActionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userHistoryFragment"
+        android:name="com.example.roflobankomatvovastera.fragments.UserHistoryFragment"
+        android:label="fragment_user_history"
+        tools:layout="@layout/fragment_user_history" >
+        <action
+            android:id="@+id/action_userHistoryFragment_to_userActionsFragment"
             app:destination="@id/userActionsFragment" />
     </fragment>
 </navigation>
