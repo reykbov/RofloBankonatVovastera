@@ -28,7 +28,7 @@
         android:id="@+id/et_enter_amount"
         android:layout_width="320dp"
         android:layout_height="50dp"
-        android:inputType="numberSigned"
+        android:inputType="number"
         android:background="@drawable/edittext_border"
         android:hint="@string/hint_enter_amount"
         android:maxLength="9"
