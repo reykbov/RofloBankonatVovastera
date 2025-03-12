@@ -34,12 +34,19 @@ class UserActionsFragment : Fragment() {
         viewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
         viewModel.sharedData.observe(viewLifecycleOwner) { data ->
             val userKeyList = data.split("_")
-            userHelper.getUser(userKeyList[0], userKeyList[1], userKeyList[2].toInt())
+            val user = userHelper.getUser(userKeyList[0], userKeyList[1], userKeyList[2].toInt())
+            binding.tvGetHistory.setOnClickListener {
+                if(user.history.isEmpty()) {
+                    user.history.add("История операций")
+                    userHelper.saveUser(user)
+                    findNavController().navigate(R.id.userHistoryFragment)
+                }
+                else findNavController().navigate(R.id.userHistoryFragment)
+            }
         }
         binding.tvFindBalance.setOnClickListener { findNavController().navigate(R.id.userBalanceFragment) }
         binding.tvLogOut.setOnClickListener { findNavController().navigate(R.id.mainMenuFragment) }
         binding.tvDepositMoney.setOnClickListener {  findNavController().navigate(R.id.userDepositFragment)}
         binding.tvWithdrawMoney.setOnClickListener {  findNavController().navigate(R.id.userWithdrawFragment)}
-        binding.tvGetHistory.setOnClickListener {  findNavController().navigate(R.id.userHistoryFragment)}
     }
 }
